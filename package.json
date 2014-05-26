@@ -8,6 +8,11 @@
   "dependencies": {
     "express": "3.2.0",
     "jade": "*",
-    "ejs": "^1.0.0"
+    "ejs": "^1.0.0",
+    "grunt": "^0.4.5",
+    "browserify": "~2.35.2",
+    "grunt-browserify": "~1.2.11",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-compass": "~0.6.0"
   }
 }
