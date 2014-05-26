@@ -19,6 +19,7 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', routes.index);
 app.post('/users', routes.users);
 
 http.createServer(app).listen(app.get('port'), function(){
