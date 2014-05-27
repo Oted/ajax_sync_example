@@ -3,10 +3,10 @@ ul {
 }
 
 li {
+    font-size: 20px;
     width: 12.5%;
-    font-size: 12px;
     float: left;
-    height: 100px;
+    height: 115px;
     text-align: center;
     border: 1px solid #fff;
     list-style: none;
@@ -34,9 +34,17 @@ li {
 
 .ui-widget-header {
     background-image: none !important;
-    background-color: #66FF33 !important;
+    background-color: #BDBDBD !important;
 }
 
 .ui-progressbar-value{
     height: 150% !important;
+}
+
+.green{
+    color: #01DF01;
+}
+
+.red{
+    color: #DF0101;
 }
