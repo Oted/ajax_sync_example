@@ -4,12 +4,11 @@ module.exports.index = function(req, res){
 };
 
 //request users.
-//obs! dummy data here, no actual users exist, 
-//as i understood it the focus is on the front-end.
+//obs! dummy data here, no actual users exist 
 module.exports.users = function(req, res){
     if (Math.random() < 0.5){
-        res.jsonp({"id": req.params.id, "online": true});
+        res.jsonp({"online": true});
     } else {
-        res.jsonp({"id": req.params.id, "online": false});
+        res.jsonp({"online": false});
     }
 };
