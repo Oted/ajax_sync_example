@@ -2,18 +2,19 @@
 	"use strict";
 
     $(function(){
-	    //call contructor for index view
+	    //call contructor for first page view
         new IndexView();			
-	});
+    });
 
 	var IndexView = function(){
-        var that = this,
-            Ajax = require("./Ajax.js").Ajax,
+        var Ajax = require("./Ajax.js").Ajax,
             numberOfUsers = 100,
         
         //on progress, update the progress bar
         updateProgressBar = function(index){
-            console.log(1 - (index / numberOfUsers));
+            $("#progress-bar").progressbar({
+                "value": Math.ceil((1 - (index / numberOfUsers)) * 100)
+            });
         },
 
         //on finish, display all results
