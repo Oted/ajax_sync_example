@@ -1,3 +1,29 @@
+ul {
+    padding-left: 0;
+}
+
+li {
+    width: 12.5%;
+    font-size: 12px;
+    float: left;
+    height: 100px;
+    text-align: center;
+    border: 1px solid #fff;
+    list-style: none;
+    background-color: #f9f9f9;
+
+    .user-info{
+        display: block; 
+    }
+
+    .glyphicon-user{
+        display: inline-block ;
+        margin-top: 15px !important;
+        margin-bottom: 10px !important;
+        font-size: 24px !important;
+    }
+}
+
 .padding-bottom-small {
     padding-bottom: 27px;
 }
@@ -9,4 +35,8 @@
 .ui-widget-header {
     background-image: none !important;
     background-color: #66FF33 !important;
+}
+
+.ui-progressbar-value{
+    height: 150% !important;
 }
