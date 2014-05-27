@@ -10,10 +10,11 @@
 	var IndexView = function(){
         var Ajax = require("./Ajax.js").Ajax,
             User = require("./User.js").User,
-            numberOfUsers = 200,
+            numberOfUsers = 100,
         
         //on progress, update the progress bar
         updateProgressBar = function(index){
+            console.log("User " + index + " loaded");
             $("#progress-bar").progressbar({
                 "value": Math.ceil((1 - (index / numberOfUsers)) * 100)
             });

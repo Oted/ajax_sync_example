@@ -1,6 +1,7 @@
+//grunt settings and config
 module.exports = function(grunt){
-	grunt.initConfig({
-		compass: {
+    grunt.initConfig({
+        compass: {
             dist: {
                 options: {
                     sassDir: "public/stylesheets/sass/",

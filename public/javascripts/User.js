@@ -1,7 +1,7 @@
 (function(win, doc, $, undefined){
 	"use strict";
 
-	//constructor for User
+	//constructor for User, this creates a new user element and append it to the DOM
 	var User = function(userObj){
         var userContainer = document.getElementById("user-container"),
             newUser = document.createElement("li"),
