@@ -11,6 +11,7 @@
         var Ajax = require("./Ajax.js").Ajax,
             User = require("./User.js").User,
             numberOfUsers = 100,
+            ajax,
         
         //on progress, update the progress bar
         updateProgressBar = function(index){
@@ -28,17 +29,18 @@
             }
 
             document.getElementById("progress-bar").style.display = "none";
-        },
+        };
         
-        //create a new ajax object
-        ajax = new Ajax(showResults, updateProgressBar);
         
         //add listener to button click 
         document.getElementById("start-button").onclick = function(event){
             //reset properties
             document.getElementById("progress-bar").style.display = "";
             document.getElementById("user-container").innerHTML = "";
-            
+                        
+            //create a new ajax object
+            ajax = new Ajax(showResults, updateProgressBar);
+
             //run ajax
             ajax.start(numberOfUsers); 
             event.preventDefault();

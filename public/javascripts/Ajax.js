@@ -10,6 +10,11 @@ var Ajax = function(done, progress){
     this.start = function(numberOfUsers){
         getUser(numberOfUsers);
     };
+
+    //clears the result
+    this.clear = function(){
+        results = [];
+    };
  
     //get user, recursive function
     var getUser = function(index){
