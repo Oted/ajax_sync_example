@@ -2,13 +2,30 @@
 	"use strict";
 
 	//constructor for User
-	var User = function(){
+	var User = function(userObj){
+        var userContainer = document.getElementById("user-container"),
+            newUser = document.createElement("li"),
+            userGlyphicon = document.createElement("span"),
+            userText = document.createElement("span"),
+            userStatus = document.createElement("span");
         
-	};
-
-    //generate the user template    
-	User.prototype.generate = function(userObj){
-
+            userText.className = "user-info";
+            userStatus.className = "user-info";
+            userGlyphicon.className = "glyphicon glyphicon-user";
+            userText.innerHTML = userObj.id;
+        
+        if (userObj.online){
+            userStatus.className = "green";
+            userStatus.innerHTML += "online";
+        } else {
+            userStatus.className = "red";
+            userStatus.innerHTML += "offline";
+        }
+        
+        newUser.appendChild(userGlyphicon);
+        newUser.appendChild(userText);
+        newUser.appendChild(userStatus);
+        userContainer.appendChild(newUser);
 	};
 
 	exports.User = User;

@@ -1,5 +1,8 @@
 "use strict";
 
+//wrapping module for the ajax communication, callbacks for progress and done 
+//are injected, when all requests has been made the done callback gets the result of all the statuses of 
+//the users.
 var Ajax = function(done, progress){
     var results = [];
     
@@ -10,11 +13,11 @@ var Ajax = function(done, progress){
  
     //get user, recursive function
     var getUser = function(index){
-        if (index >= 0){
+        if (index > 0){
             $.ajax({
                 "url": "/users",
                 "type": "POST",
-                "data": index,
+                "data": {"id" : index},
                 "success": function(data){
                     //save the data on progress
                     results.push(data);

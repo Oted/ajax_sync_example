@@ -1,14 +1,16 @@
 (function(win, doc, $, undefined){
 	"use strict";
 
+    //on document ready, load the view
     $(function(){
 	    //call contructor for first page view
-        new IndexView();			
+        new IndexView();
     });
 
 	var IndexView = function(){
         var Ajax = require("./Ajax.js").Ajax,
-            numberOfUsers = 100,
+            User = require("./User.js").User,
+            numberOfUsers = 200,
         
         //on progress, update the progress bar
         updateProgressBar = function(index){
@@ -18,18 +20,27 @@
         },
 
         //on finish, display all results
-        showResults = function(results){
-            console.log("done!");
-            console.log(results);
-        },
+        showResults = function(users){
+            for (var i = users.length - 1; i >= 0; i--){
+                //create a new user.
+                new User(users[i]);
+            }
 
+            document.getElementById("progress-bar").style.display = "none";
+        },
+        
+        //create a new ajax object
         ajax = new Ajax(showResults, updateProgressBar);
         
         //add listener to button click 
         document.getElementById("start-button").onclick = function(event){
+            //reset properties
+            document.getElementById("progress-bar").style.display = "";
+            document.getElementById("user-container").innerHTML = "";
+            
+            //run ajax
             ajax.start(numberOfUsers); 
             event.preventDefault();
         };
     };
-
 })(window, document, jQuery);
